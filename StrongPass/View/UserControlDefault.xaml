@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="StrongPass.View.UserControlDefault"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StrongPass.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="220" d:DesignWidth="600">
+    <Grid Background="#191919">
+        <StackPanel VerticalAlignment="Top" Margin="0 35">
+            <TextBlock Foreground="#FFF" Text="Choisissez la robustesse du mot de passe" FontSize="14" HorizontalAlignment="Center"/>
+            <Slider x:Name="slider_lenght" Orientation="Horizontal" Width="300" Margin="0 10" Foreground="Red" Maximum="5" />
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 10">
+            <Button x:Name="button_Generate" Margin="10 0" Content="Generer" Height="30" Width="100" HorizontalAlignment="Center" Background="#007ACC" BorderThickness="0" FontWeight="DemiBold" Foreground="#FFF" Click="button_Generate_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="button_Copy" Margin="10 0" Content="Copier" Height="30" Width="100" Background="#007ACC" BorderThickness="0" FontWeight="DemiBold" Click="button_Copy_Click" IsEnabled="False">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="50 50">
+            <TextBox x:Name="textBox_ResultPass" Height="30" Width="200" Text="Mot de passe générer" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="SemiBold" IsReadOnly="True">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+        </StackPanel>
+    </Grid>
+</UserControl>
